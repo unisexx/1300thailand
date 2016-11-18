@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="themes/law/css/bootstrap.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+<link rel="stylesheet" href="media/bootstrap-3.3.6/css/bootstrap.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
 <style>
 body {
   padding-top: 40px;
