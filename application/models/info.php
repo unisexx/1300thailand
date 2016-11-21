@@ -1,7 +1,7 @@
 <?php
-class Law_plan extends ORM
+class info extends ORM
 {
-	public $table = "law_plans";
+	public $table = "infos";
 
 	public function __construct($id = NULL)
 	{

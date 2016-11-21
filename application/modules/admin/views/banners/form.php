@@ -1,22 +1,22 @@
-<h3>ไฮไลท์ (เพิ่ม / แก้ไข)</h3>
+<h3>แบนเนอร์ (เพิ่ม / แก้ไข)</h3>
 
-<form id="hilight_frm" method="post" enctype="multipart/form-data" action="admin/hilights/save/<?=$rs->id?>">
+<form id="info_frm" method="post" enctype="multipart/form-data" action="admin/infos/save/<?=$rs->id?>">
 
 <!-- Tab panes -->
 <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="thai">
         <table class="tbadd">
         <tr>
-          <th>ชื่อไฮไลท์<span class="Txt_red_12"> *</span></th>
+          <th>ชื่อแบนเนอร์<span class="Txt_red_12"> *</span></th>
           <td>
           	<input rel="th" type="text" class="form-control" name="name" value="<?=$rs->name?>" style="width:800px;" />
 		  </td>
         </tr>
         <tr>
-          <th>ไฟล์แนบเอกสาร<br>ขนาด 930 x 630 px</th>
+          <th>ไฟล์แนบเอกสาร<br>ขนาด 237 x 97 px</th>
           <td>
           	<?if($rs->img_th != ""):?>
-          		<a href="uploads/hilight/<?=$rs->img_th?>" target="_blank"><i class="fa fa-file-pdf-o"></i> <?=$rs->img_th?></a>
+          		<a href="uploads/info/<?=$rs->img_th?>" target="_blank"><i class="fa fa-file-pdf-o"></i> <?=$rs->img_th?></a>
           	<?endif;?>
           	<input type="file" name="img_th" class="form-control" id="fileField" />
           </td>
@@ -39,7 +39,7 @@
 
 <script type="text/javascript">
 $(function() {
-	$("#hilight_frm").validate({
+	$("#info_frm").validate({
 	    rules:
 	    {
 	    	'name':{required: true}
