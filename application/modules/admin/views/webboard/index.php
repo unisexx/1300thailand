@@ -2,12 +2,11 @@
 <div id="search">
 <div id="searchBox">
 <form class="form-inline">
-  <div class="col-xs-3">
-    <input type="text" class="form-control" id="exampleInputName2" placeholder="ชื่อหัวข้อกระทู้" name="search" value="<?=@$_GET['search']?>">
+	<div>
+	  	<?=form_dropdown('webboard_category_id', get_option('id','name','webboard_categories order by id asc'), @$_GET['webboard_category_id'],'class="form-control" style="width:auto;"','--- เลือกหมวด ---');?>
+	  	<input type="text" class="form-control" id="exampleInputName2" placeholder="ชื่อหัวข้อกระทู้" name="search" value="<?=@$_GET['search']?>" style="width: 350px;">
+	  	<button type="submit" class="btn btn-info"><img src="themes/admin/images/search.png" width="16" height="16" />Search</button>
     </div>
-  <!-- <input type="text" class="form-control" id="exampleInputName10" style="width:110px;" />
-    <img src="images/calendar.png" alt="" width="24" height="24" /> -->
-  <button type="submit" class="btn btn-info"><img src="themes/admin/images/search.png" width="16" height="16" />Search</button>
 </form>
 
   
@@ -20,6 +19,7 @@
 <tr>
   <th>#</th>
   <th><img src="themes/admin/images/pin.png" width="16" height="16" class="vtip" title="ปักหมุดกระทู้" /></th>
+  <th>หมวดหมู่</th>
   <th>หัวข้อกระทู้</th>
   <th>ความคิดเห็น</th>
   <th>ผู้โพสกระทู้</th>
@@ -31,11 +31,12 @@
   <tr class="<?=alternator('','odd');?>">
 	  <td><?=($key+1)+$rs->paged->current_row?></td>
 	  <td><input name="quiz_sticky" type="checkbox" value="1" data-row-id="<?=$row->id?>" <?=($row->quiz_sticky == 1)?'checked="checked"':'';?>/></td>
+	  <td><?=$row->webboard_category->name?></td>
 	  <td><a href="admin/webboard/form/<?=$row->id?>"><?=$row->quiz_title?></a></td>
-	  <td><?=$row->law_answer->count()?></td>
+	  <td><?=$row->webboard_answer->count()?></td>
 	  <td><?=$row->quiz_who?></td>
 	  <td><?=mysql_to_th($row->quiz_createdate)?></td>
-	  <td><?=mysql_to_th($row->law_answer->order_by('id','desc')->answer_createdate)?></td>
+	  <td><?=mysql_to_th($row->webboard_answer->order_by('id','desc')->answer_createdate)?></td>
 	  <td>
 	  	<input id="switch-size" data-status="<?=$row->quiz_status?>" data-row-id="<?=$row->id?>" type="checkbox" data-size="small" data-on-color="success" class="chkOnOff" <?if($row->quiz_status == 1){echo "checked";}?> name="status">
 	  </td>
