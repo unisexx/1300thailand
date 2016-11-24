@@ -1,4 +1,4 @@
-<h3>หน่วยงานกฏหมายอื่น</h3>
+<h3>หน่วยงานต่างๆที่เกี่ยวข้อง</h3>
 <div id="search">
 <div id="searchBox">
 <form class="form-inline">
@@ -15,7 +15,7 @@
 </div>
 
 <div id="btnBox">
-  <input type="button" title="เพิ่มหน่วยงานกฏหมายอื่น" value="เพิ่มหน่วยงานกฏหมายอื่น" onclick="document.location='admin/weblinks/form'" class="btn btn-warning vtip" />
+  <input type="button" title="เพิ่มหน่วยงานอื่น" value="เพิ่มหน่วยงานอื่น" onclick="document.location='admin/weblinks/form'" class="btn btn-warning vtip" />
 </div>
 <?php echo $rs->pagination()?>
 

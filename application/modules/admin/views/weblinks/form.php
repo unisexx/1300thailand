@@ -1,4 +1,4 @@
-<h3>หน่วยงานกฏหมายอื่น (เพิ่ม / แก้ไข)</h3>
+<h3>หน่วยงานต่างๆที่เกี่ยวข้อง (เพิ่ม / แก้ไข)</h3>
 
 <form id="law_plans_frm" method="post" enctype="multipart/form-data" action="admin/weblinks/save/<?=$rs->id?>">
 <!-- Nav tabs -->

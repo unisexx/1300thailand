@@ -17,7 +17,7 @@ class Auth extends Public_Controller
 		if(login($this->input->post('username'), $this->input->post('password')))
 		{
 			set_notify('success', 'Welcome to Admin control');
-			redirect('admin/user');
+			redirect('admin/hilights');
 		} 
 		else
 		{
