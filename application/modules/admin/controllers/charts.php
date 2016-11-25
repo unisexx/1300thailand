@@ -1,5 +1,5 @@
 <?php
-class Hilights extends Admin_Controller {
+class charts extends Admin_Controller {
 
 	function __construct()
 	{
@@ -8,47 +8,51 @@ class Hilights extends Admin_Controller {
 
 	function index()
 	{
-		$data['rs'] = new hilight();
+		$data['rs'] = new chart();
 		if(@$_GET['search']){
 			$data['rs']->where('name LIKE "%'.$_GET['search'].'%"');
 		}
+		
+		if(@$_GET['chart_category_id']){
+			$data['rs']->where('chart_category_id = '.@$_GET['chart_category_id']);
+		}
 
 		$data['rs']->order_by('id','desc')->get_page();
-		$this->template->build('hilights/index',$data);
+		$this->template->build('charts/index',$data);
 	}
 
 	function form($id=false){
-		$data['rs'] = new hilight($id);
-		$this->template->build('hilights/form',$data);
+		$data['rs'] = new chart($id);
+		$this->template->build('charts/form',$data);
 	}
 
 	function save($id=false){
 		if($_POST){
 
-			$rs = new hilight($id);
+			$rs = new chart($id);
 			
-			if($_FILES['img_th']['name'])
+			if($_FILES['attach']['name'])
 			{
 				if($rs->id){
-					$rs->delete_file($rs->id,'uploads/hilight','img_th');
+					$rs->delete_file($rs->id,'uploads/attach','attach');
 				}
-				$_POST['img_th'] = $rs->upload($_FILES['img_th'],'uploads/hilight/');
+				$_POST['attach'] = $rs->upload($_FILES['attach'],'uploads/attach/');
 			}
 			
 			$rs->from_array($_POST);
 			$rs->save();
 			set_notify('success', 'บันทึกข้อมูลเรียบร้อย');
 		}
-		redirect('admin/hilights');
+		redirect('admin/charts');
 	}
 
 	function delete($id){
 		if($id){
-			$rs = new hilight($id);
+			$rs = new chart($id);
 			$rs->delete();
 			set_notify('success', 'ลบข้อมูลเรียบร้อย');
 		}
-		redirect('admin/hilights');
+		redirect('admin/charts');
 	}
 
 }
