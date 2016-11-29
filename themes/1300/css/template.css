@@ -1,0 +1,157 @@
+body{background-color:white; font-size:14px; color:black; font-family:tahoma;}
+
+@font-face {
+	font-family: Conv_supermarket;
+	src: url('../fonts/supermarket.eot');
+	src: local('☺'), url('../fonts/supermarket.woff') format('woff'), url('../fonts/supermarket.ttf') format('truetype'), url('../fonts/supermarket.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: Conv_CSChatThaiUI;
+	src: url('../fonts/CSChatThaiUI.eot');
+	src: local('☺'), url('../fonts/CSChatThaiUI.woff') format('woff'), url('../fonts/CSChatThaiUI.ttf') format('truetype'), url('../fonts/CSChatThaiUI.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+:focus {outline: none;}
+
+.topmenu {font-family: Conv_supermarket; font-size:20px; }
+.topmenu ul {padding:0; margin:0; }
+.topmenu ul li {padding:0; margin:0; list-style:none; display:inline-block; padding:25px;}
+.topmenu ul li a{padding:0; margin:0; list-style:none; display:inline-block; color:#4b4b4b; }
+.topmenu ul li a:hover {text-decoration:none; border-bottom: 3px solid #fe98cd; }
+.topmenu ul li a.active {border-bottom: 3px solid #fe98cd;}
+
+.mark-address{font-family: Conv_supermarket; font-size:14px; margin-top:-30px;margin-left:30px;margin-bottom:10px;}
+.tel{font-family: Conv_supermarket; font-size:30px;margin-left:30px;margin-top:-35px;}
+#bg-logo{background-image: url("../images/logo-watermark.jpg"); background-repeat:no-repeat;background-position:70%; margin-top:-20px; }
+#bg-highlight{background-image: url("../images/bg-highlight.jpg"); background-repeat:repeat-x; margin-top:-20px; padding-top: 10px;}
+#banner img{padding-bottom:15px;}
+
+/* Hilight*/
+#width-slide{ width:95%; margin:0 auto; position:relative;}
+.item img{ height:329px !important;}
+/* Slide*/
+	#run { position:absolute; margin:0 auto;  width:100%; text-align:center; line-height: 25px; margin-top:5px;}
+		#run ol{padding:0; margin:0; list-style:none;}
+		#run ol li{padding:2; margin:0; list-style:none;display:inline-block; zoom: 1; *display: inline; font-size:13px; font-weight:bold;}
+
+		#run ol li a{color:white; padding:0; margin:0; list-style:none; display:inline-block; zoom: 1; *display: inline; float:left; text-decoration:none;
+		width:10px;  height:10px;  -moz-border-radius: 50%;   -webkit-border-radius: 50%;   border-radius: 50%;   background: #828e96;  }
+
+		#run ol li a:hover{ padding:0; margin:0; list-style:none; display:inline-block; zoom: 1; *display: inline; float:left;  text-decoration:none;
+		width:10px;  height:10px;  -moz-border-radius: 50%;   -webkit-border-radius: 50%;   border-radius: 50%;   background-color:#e6307b; }
+
+		#run ol li a.active{padding:0; margin:0; list-style:none; display:inline-block;width:10px;  height:10px;  -moz-border-radius: 50%;   -webkit-border-radius: 50%;   border-radius: 50%;   background:#e6307b;}
+		.run-all a{color:#828e96; font-size:12px; font-weight:bold; text-align:center; padding-left:10px;}
+		.run-all:hover{text-decoration:underline;}
+
+		.arrow-prev {width:28px; height:46px; background-image: url("../images/arrow-left.png"); background-repeat:no-repeat; margin-top:150px; margin-left:-30px; }
+		.arrow-next {width:28px; height:46px;  background-image: url("../images/arrow-right.png"); background-repeat:no-repeat; margin-top:150px; float:right; margin-right:-30px; }
+.carousel-control.left, .carousel-control.right {background-image:none;}
+
+
+
+/* NEWS*/
+.title-news{color:#fe329b; font-size:25px; font-family: Conv_CSChatThaiUI; border-bottom:2px solid #fbc3da; }
+.btn-viewall{ font-weight:bold; color:black; float:right; margin-top:-22px;}
+#bg-thumpnail {width:294px; background-image: url("../images/bg-thumpnail.jpg"); background-repeat:no-repeat; padding-top:10px; padding-left:10px;}
+#bg-thumpnail img {width:276px; display: block; height: auto;}
+#bg-thumpnail p {font-size:14px; height:50px; padding-top:10px; overflow:hidden; }
+#bg-thumpnail_2 {float:right; width:294px; background-image: url("../images/bg-thumpnail.jpg"); background-repeat:no-repeat; padding-top:10px; padding-left:10px;}
+#bg-thumpnail_2 img {width:276px; display: block; height: auto;}
+#bg-thumpnail_2 p {font-size:14px; height:50px; padding-top:10px; overflow:hidden; }
+.date-news {color:#b0b0b0; font-size:11px; width:100%; margin-top:-10px;}
+.date-news img {width:auto !important;}
+.date-news ul{padding:0; margin:0;}
+.date-news ul li{padding:0; margin:0; list-style:none; display:inline-block; line-height:30px;}
+.clearfix-news{clear:both; margin-top:20px;}
+.clearfix-news2{clear:both; margin-bottom: 30px;}
+
+/* TAB*/
+.title-webboard{color:#fe329b; font-size:25px; font-family: Conv_CSChatThaiUI; }
+.btn-post {font-family: Conv_CSChatThaiUI; font-size:17px; color:black; float:right; margin-top:-30px; }
+.faq {float:right;  margin-top:-30px; margin-right:130px;}
+#bg-footer{background-image: url("../images/bg-footer.jpg"); background-repeat:repeat-x; text-align:center; color:white; font-size:14px;
+height:65px; padding:0; padding-top:25px; margin-top:30px;}
+
+.line-ttab{  border-top: 2px solid #fbc3da; border-bottom: 2px solid #fbc3da;}
+#ttab{background-color:#efeeee; }
+#ttab li, #ttab li a{font-family: Conv_CSChatThaiUI; color:black; font-size:16px; border-radius:0;  }
+#ttab li.active{ display:block; background-color:white !important; border-radius:0; }
+#ttab li a:hover{ display:block; background-color:white !important; border-radius:0; }
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {border:none !important;}
+.nav-tabs { border:none !important;}
+.nav-tabs > li > a { border: 0px solid transparent;  line-height:17px;}
+.nav-tabs > li {  margin-bottom: 0px; }
+.table th {font-family: Conv_CSChatThaiUI; font-size:15px;}
+.table { font-size:14px;}
+#line-dashed td {border-bottom:1px dashed #ccc !important; border-top:1px dashed #ccc !important;}
+
+/* PAGE */
+
+#logo-page{background-image: url('../images/logo-page.png'); height:150px;  width:369px; background-repeat:no-repeat; text-align:left;}
+#bg-head-page{ height:150px; margin-top:-20px;
+background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f0a9cd), to(#F2C3D7));
+background-image: -webkit-linear-gradient(left, #f0a9cd, #F2C3D7);
+background-image:    -moz-linear-gradient(left, #f0a9cd, #F2C3D7);
+background-image:     -ms-linear-gradient(left, #f0a9cd, #F2C3D7);
+background-image:      -o-linear-gradient(left, #f0a9cd, #F2C3D7);
+}
+.title-page{font-family: Conv_CSChatThaiUI; font-size:37px; color:#f8dae8; text-align:right; margin-top:-60px; padding-right:90px;}
+.list-about ul {padding:0; margin:15px;}
+.list-about ul li {line-height:30px; font-family: Conv_CSChatThaiUI; color:#515051; font-size:15px; }
+#text-1300 {font-family: Conv_CSChatThaiUI; font-size:17px; color:#515051; float:left; width:80%; padding-left:10px;  padding-top:10px; }
+.bg-1300 {background-color: #f3f2f3; padding:10px; position:relative; height:156px;margin-top:1px; }
+.img-1300{ float:left; }
+.link01{border-bottom:2px solid #dfdfdf;  padding:20px;}
+.link01 img {padding-right:20px;}
+.title-mission{float:left; font-family: Conv_CSChatThaiUI; font-size:17px; padding-left:10px; }
+.list-mission {margin-left:40px;}
+.list-mission ol {padding:0; margin:15px;}
+.list-mission ol li {line-height:30px; font-family: Conv_CSChatThaiUI; color:#515051; font-size:15px; }
+.address-contact{font-family: Conv_CSChatThaiUI; color:#515051; font-size:15px; margin-left:40px;}
+.btn-stat01 {border:1px solid #cccccc; background-color:#fbd8ea; padding-left:15px;padding-right:15px;  padding-top:8px;padding-bottom:8px;border-radius:2px; color:#515051; font-size:16px; font-family: Conv_CSChatThaiUI; margin-right:15px; }
+.btn-stat01:hover{background-color:#fee4f1; }
+.barcode{ font-family: Conv_CSChatThaiUI; color:#515051; font-size:15px; text-align:center; margin-top:20px;}
+
+
+
+
+/*หน้าจอต่างๆ
+@media screen and (max-width:420px) {
+
+}
+
+@media screen and (min-width: 421px) and (max-width: 700px) {
+
+}
+
+@media screen and (min-width: 701px) and (max-width: 900px) {
+ 
+}
+
+@media screen and (min-width: 901px) and (max-width: 1200px) {
+
+}
+
+ @media screen and (min-width: 1201px) and (max-width: 3000px) {
+
+ }
+
+
+
+@media screen and (min-width: 0px) and (max-width: 1200px) {
+#line{display:none;}
+}
+@media screen and (min-width: 0px) and (max-width: 800px) {
+.scroll-top-wrapper{display:none;}
+}
+@media screen and (min-width: 0px) and (max-width: 450px) {
+.btn-readmore{margin-top: -95px;}
+}
+*/
+
+
