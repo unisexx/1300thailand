@@ -11,10 +11,10 @@
 						<div class="topmenu">
 							<ul>
 								<li style="padding-left:0px;"><a href="#" class="active">หน้าแรก</a></li>
-								<li><a href="#">เกี่ยวกับเรา</a></li>
+								<li><a href="pages/view/1">เกี่ยวกับเรา</a></li>
 								<li><a href="#">สถิติสายด่วน</a></li>
-								<li><a href="#">ภาระกิจงาน</a></li>
-								<li><a href="#">ติดต่อเรา</a></li>
+								<li><a href="pages/view/2">ภาระกิจงาน</a></li>
+								<li><a href="pages/view/3">ติดต่อเรา</a></li>
 							</ul>
 						</div>
 				  </div>

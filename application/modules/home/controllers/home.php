@@ -39,7 +39,9 @@ class Home extends Public_Controller {
 	}
 	
 	function inc_webboard(){
-		$this->load->view('inc_webboard');
+		$data['webboard_categories'] = new webboard_category();
+		$data['webboard_categories']->order_by('id asc')->get();
+		$this->load->view('inc_webboard',$data);
 	}
 }
 ?>
