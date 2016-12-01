@@ -27,13 +27,13 @@ class pages extends Admin_Controller {
 
 			$rs = new page($id);
 			
-			if($_FILES['image']['name'])
-			{
-				if($rs->id){
-					$rs->delete_file($rs->id,'uploads/page','image');
-				}
-				$_POST['image'] = $rs->upload($_FILES['image'],'uploads/page/',275,165);
-			}
+			// if($_FILES['image']['name'])
+			// {
+				// if($rs->id){
+					// $rs->delete_file($rs->id,'uploads/page','image');
+				// }
+				// $_POST['image'] = $rs->upload($_FILES['image'],'uploads/page/',275,165);
+			// }
 			
 			$_POST['user_id'] = user_login()->id;
 			

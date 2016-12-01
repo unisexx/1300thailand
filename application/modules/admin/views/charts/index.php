@@ -21,6 +21,7 @@
 <table class="tblist">
 <tr>
   <th>#</th>
+  <th>หมวด</th>
   <th>ชื่อไฟล์</th>
   <th>ไฟล์</th>
   <th>จัดการ</th>
@@ -28,6 +29,7 @@
   <?foreach($rs as $key=>$row):?>
   <tr class="<?=alternator('','odd');?>">
 	  <td><?=($key+1)+$rs->paged->current_row?></td>
+	  <td><?=$row->chart_category->name?></td>
 	  <td><?=$row->name?></td>
 	  <td>
 	  	<?if($row->attach != ""):?>
