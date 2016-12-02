@@ -1,12 +1,11 @@
-<div id="plan">
-  <span class="title-law2"><?=lang("h_other")?></span>
-  <div class="line1">&nbsp;</div>
+<div class="title-news">หน่วยงานต่างๆที่เกี่ยวข้อง</div>
+<div class="clearfix">&nbsp;</div>
 
   <table class="table table-striped" id="tb-plan">
     <thead>
       <tr>
-        <th><?=lang("o_name")?></th>
-        <th><?=lang("o_web")?></th>
+        <th>ชื่อ</th>
+        <th>ลิ้งค์</th>
       </tr>
     </thead>
     <tbody>
@@ -18,4 +17,4 @@
     	<?endforeach;?>
     </tbody>
   </table>
-</div>
+
