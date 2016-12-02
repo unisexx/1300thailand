@@ -1,6 +1,6 @@
 <div class="col-md-12">
 									<div class="title-webboard">บอร์ด กระ ทู้ ถาม - ตอบ</div>
-										<a href="#" class="btn-post">ตั้งกระทู้ ถาม-ตอบ</a><img src="themes/1300/images/icon-faq.png" class="faq">
+										<a href="webboard/form" class="btn-post">ตั้งกระทู้ ถาม-ตอบ</a><img src="themes/1300/images/icon-faq.png" class="faq">
 						</div>
 						<div class="clearfix">&nbsp;</div>
 						<!-------------------------StartTab------------------------------------------------------------>

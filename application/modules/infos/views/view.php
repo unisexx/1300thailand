@@ -1,6 +1,7 @@
-<div class="title-news"><?=$rs->title?></div>
+<div class="title-news">ข่าวประชาสัมพันธ์</div>
 <div class="clearfix">&nbsp;</div>
-
-		<?=$rs->detail?>
+<h3><?=$rs->title?></h3>
+		
+<?=$rs->detail?>
 
 <div class="clearfix">&nbsp;</div>

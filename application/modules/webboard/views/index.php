@@ -1,16 +1,16 @@
 <div id="webboard">
-  <span class="title-law2"><?=lang("h_webboard")?></span>
-  <div class="line1">&nbsp;</div>
+  <div class="title-news">บอร์ดกระทู้ ถาม - ตอบ (<?=$rs->webboard_category->name?>)</div>
+	<div class="clearfix">&nbsp;</div>
 
-  <a href="webboard/form"><i class="fa fa-pencil-square-o"></i> <?=lang("b_create")?></a>
+  <a href="webboard/form"><i class="fa fa-pencil-square-o"></i> ตั้งคำถามใหม่</a>
   <table class="table table-striped" id="tb-plan">
     <thead>
       <tr>
-        <th><?=lang("b_no")?></th>
-        <th><?=lang("b_question")?></th>
-        <th><?=lang("b_by")?></th>
-        <th><?=lang("b_read")?></th>
-        <th><?=lang("b_ans")?></th>
+        <th>คำถามที่</th>
+        <th>หัวข้อ</th>
+        <th>โดย</th>
+        <th>อ่าน</th>
+        <th>ตอบ</th>
       </tr>
     </thead>
     <tbody>
@@ -25,7 +25,7 @@
         </td>
         <td><?=$row->quiz_who?></td>
         <td><?=number_format($row->quiz_view)?></td>
-        <td><?=$row->law_answer->count()?></td>
+        <td><?=$row->webboard_answer->count()?></td>
       </tr>
       <?endforeach;?>
     </tbody>

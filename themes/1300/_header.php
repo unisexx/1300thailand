@@ -10,7 +10,7 @@
 						</div>
 						<div class="topmenu">
 							<ul>
-								<li style="padding-left:0px;"><a href="#" class="active">หน้าแรก</a></li>
+								<li style="padding-left:0px;"><a href="home" class="active">หน้าแรก</a></li>
 								<li><a href="pages/view/1">เกี่ยวกับเรา</a></li>
 								<li><a href="charts/view/1">สถิติสายด่วน</a></li>
 								<li><a href="pages/view/2">ภาระกิจงาน</a></li>

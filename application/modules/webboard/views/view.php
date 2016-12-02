@@ -1,6 +1,6 @@
 <div id="webboard">
-  <span class="title-law2"><?=lang("h_webboard")?></span>
-  <div class="line1">&nbsp;</div>
+  <div class="title-news">บอร์ดกระทู้ ถาม - ตอบ (<?=$quiz->webboard_category->name?>)</div>
+	<div class="clearfix">&nbsp;</div>
   <div>
     <h3><?=$quiz->quiz_title?></h3>
     <p><?=$quiz->quiz_detail?></p>
@@ -19,17 +19,17 @@
   <?endforeach;?>
   <!-- <h4>ตอบคำถาม</h4> -->
   <form id="webboard_answer" class="form-horizontal" action="webboard/save_answer" method="post">
-    <textarea class="form-control" name="answer_detail" rows="8" placeholder="<?=lang("b_detail")?>"></textarea>
+    <textarea class="form-control" name="answer_detail" rows="8" placeholder="รายละเอียด"></textarea>
     <br>
-    <input class="form-control" type="text" name="answer_who" placeholder="<?=lang("b_name")?>">
-    <!-- <br>
+    <input class="form-control" type="text" name="answer_who" placeholder="ชื่อ">
+    <br>
     <img src="users/captcha" />
     <Br>
-    <input class="form-control" type="text" name="captcha" id="inputCaptcha" placeholder="<?=lang("captcha")?>" style="width:125px;"> -->
+    <input class="form-control" type="text" name="captcha" id="inputCaptcha" placeholder="รหัสลับ" style="width:104px;">
     <Br>
-    	<input type="hidden" name="law_quiz_id" value="<?=$quiz->id?>">
+    	<input type="hidden" name="webboard_quiz_id" value="<?=$quiz->id?>">
 	  <!-- <button type="submit" class="btn btn-info">ตั้งคำถาม</button> -->
-    	<input class="btn btn-info" type="submit" value="<?=lang("b_answer_button")?>">
+    	<input class="btn btn-info" type="submit" value="ตอบคำถาม">
   </form>
 </div>
 
