@@ -10,7 +10,7 @@
 			<div class="date-news">
 				<ul>
 					<li><img src="themes/1300/images/icon-calendar.png"></li>
-					<li> <?=mysql_to_th($info->created)?> </li>
+					<li> <?=DB2Date($info->post_date)?> </li>
 					<li><img src="themes/1300/images/icon-glass.png" style="margin-left:10px;"></li>
 					<li>view <?=$info->counter?></li>
 				</ul>

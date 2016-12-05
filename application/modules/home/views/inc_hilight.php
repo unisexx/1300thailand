@@ -20,7 +20,7 @@
 					<div class="carousel-inner">
 						<?foreach($rs as $key=>$row):?>
 						<div class="item <?=$key==0?'active':'';?>">
-							<a href="<?=$row->url?>" target="_blank"><img src="themes/1300/images/highlight-pic001.jpg" alt="title" class="img-responsive"></a>
+							<a href="<?=$row->url?>" target="_blank"><img src="uploads/hilight/<?=$row->img_th?>" alt="title" class="img-responsive"></a>
 						</div>
 						<?endforeach;?>
 					</div>

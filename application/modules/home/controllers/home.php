@@ -34,7 +34,7 @@ class Home extends Public_Controller {
 	
 	function inc_info(){
 		$data['infos'] = new info();
-		$data['infos']->get(4);
+		$data['infos']->order_by('id desc')->get(4);
 		$this->load->view('inc_info',$data);
 	}
 	

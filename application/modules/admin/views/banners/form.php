@@ -1,6 +1,6 @@
 <h3>แบนเนอร์ (เพิ่ม / แก้ไข)</h3>
 
-<form id="info_frm" method="post" enctype="multipart/form-data" action="admin/infos/save/<?=$rs->id?>">
+<form id="info_frm" method="post" enctype="multipart/form-data" action="admin/banners/save/<?=$rs->id?>">
 
 <!-- Tab panes -->
 <div class="tab-content">

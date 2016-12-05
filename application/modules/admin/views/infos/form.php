@@ -16,7 +16,7 @@
           <th>รูปหัวข้อข่าว<br>ขนาด 275 x 165 px</th>
           <td>
           	<?if($rs->image != ""):?>
-          		<a href="uploads/banner/<?=$rs->image?>" target="_blank"><i class="fa fa-file-pdf-o"></i> <?=$rs->image?></a>
+          		<img src="uploads/info/<?=$rs->image?>" width="90">
           	<?endif;?>
           	<input type="file" name="image" class="form-control" id="fileField" />
           </td>
@@ -26,6 +26,16 @@
         	<td>
         		<textarea name="detail" class="full tinymce"><?php echo $rs->detail?></textarea>
         	</td>
+        </tr>
+        <tr>
+          <th>วันที่</th>
+          <td>
+          	<span class="form-inline">
+		    <div class="input-group date">
+			  <input type="text" class="form-control datepickerTH" data-date-language="th-th" name="post_date" value="<?=DB2Date($rs->post_date)?>"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+			</div>
+		    </span>
+		  </td>
         </tr>
         </table>
     </div>

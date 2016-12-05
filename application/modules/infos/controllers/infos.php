@@ -16,6 +16,7 @@ class infos extends Public_Controller {
 	function view($id)
 	{
 		$data['rs'] = new info($id);
+		$data['rs']->counter();
 		$this->template->build('view',$data);
 	}
 }

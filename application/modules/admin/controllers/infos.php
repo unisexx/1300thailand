@@ -35,6 +35,7 @@ class infos extends Admin_Controller {
 				$_POST['image'] = $rs->upload($_FILES['image'],'uploads/info/',275,165);
 			}
 			
+			$_POST['post_date'] = Date2DB($_POST['post_date']);
 			$_POST['user_id'] = user_login()->id;
 			
 			$rs->from_array($_POST);
