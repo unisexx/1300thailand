@@ -31,12 +31,28 @@ class charts extends Admin_Controller {
 
 			$rs = new chart($id);
 			
-			if($_FILES['attach']['name'])
+			if($_FILES['attach_1']['name'])
 			{
 				if($rs->id){
-					$rs->delete_file($rs->id,'uploads/attach','attach');
+					$rs->delete_file($rs->id,'uploads/chart','attach_1');
 				}
-				$_POST['attach'] = $rs->upload($_FILES['attach'],'uploads/attach/');
+				$_POST['attach_1'] = $rs->upload($_FILES['attach_1'],'uploads/chart/');
+			}
+			
+			if($_FILES['attach_2']['name'])
+			{
+				if($rs->id){
+					$rs->delete_file($rs->id,'uploads/chart','attach_2');
+				}
+				$_POST['attach_2'] = $rs->upload($_FILES['attach_2'],'uploads/chart/');
+			}
+			
+			if($_FILES['attach_3']['name'])
+			{
+				if($rs->id){
+					$rs->delete_file($rs->id,'uploads/chart','attach_3');
+				}
+				$_POST['attach_3'] = $rs->upload($_FILES['attach_3'],'uploads/chart/');
 			}
 			
 			$rs->from_array($_POST);

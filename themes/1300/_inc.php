@@ -7,7 +7,13 @@
 
 <script>
 $(document).ready(function(){
+	// copy ชื่อหัวข้อ ไปวางไว้บนพื้น สีชมพู
 	var header_txt = $(".title-news").html();
 	$('.title-page').html(header_txt);
+	
+	// header menu hilight
+	console.log(window.location.pathname);
+	var path = window.location.pathname;
+	$('[href="'+path.substring(1, 30)+'"]').addClass('active').parent('li').siblings().find('a').removeClass('active');
 });
 </script>

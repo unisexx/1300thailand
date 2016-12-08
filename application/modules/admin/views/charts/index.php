@@ -32,8 +32,14 @@
 	  <td><?=$row->chart_category->name?></td>
 	  <td><?=$row->name?></td>
 	  <td>
-	  	<?if($row->attach != ""):?>
-      		<a href="uploads/chart/<?=$row->attach?>" target="_blank"><i class="fa fa-file-pdf-o"></i> <?=$row->attach?></a>
+	  	<?if($row->attach_1 != ""):?>
+      		<a href="uploads/chart/<?=$row->attach_1?>" target="_blank"><i class="fa fa-file-pdf-o"></i> <?=$row->attach_1?></a><br>
+      	<?endif;?>
+      	<?if($row->attach_2 != ""):?>
+      		<a href="uploads/chart/<?=$row->attach_2?>" target="_blank"><i class="fa fa-file-pdf-o"></i> <?=$row->attach_2?></a><br>
+      	<?endif;?>
+      	<?if($row->attach_3 != ""):?>
+      		<a href="uploads/chart/<?=$row->attach_3?>" target="_blank"><i class="fa fa-file-pdf-o"></i> <?=$row->attach_3?></a>
       	<?endif;?>
 	  </td>
 	  <td><a href="admin/charts/form/<?=$row->id?>"><img src="themes/admin/images/edit.png" width="24" height="24" style="margin-right:10px;" class="vtip" title="แก้ไขรายการนี้" /></a> <a href="admin/charts/delete/<?=$row->id?>"><img src="themes/admin/images/remove.png" width="32" height="32" class="vtip" title="ลบรายการนี้"  onclick="return confirm('<?php echo lang('notice_confirm_delete');?>')" /></a></td>

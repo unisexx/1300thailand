@@ -21,10 +21,28 @@
         <tr>
           <th>ไฟล์แนบเอกสาร</th>
           <td>
-          	<?if($rs->attach != ""):?>
-          		<a href="uploads/chart/<?=$rs->attach?>" target="_blank"><i class="fa fa-file-pdf-o"></i> <?=$rs->attach?></a>
+          	<?if($rs->attach_1 != ""):?>
+          		<a href="uploads/chart/<?=$rs->attach_1?>" target="_blank"><i class="fa fa-file-pdf-o"></i> <?=$rs->attach_1?></a>
           	<?endif;?>
-          	<input type="file" name="attach" class="form-control" id="fileField" />
+          	<input type="file" name="attach_1" class="form-control" id="fileField" />
+          </td>
+        </tr>
+        <tr>
+          <th>ไฟล์แนบเอกสาร</th>
+          <td>
+          	<?if($rs->attach_2 != ""):?>
+          		<a href="uploads/chart/<?=$rs->attach_2?>" target="_blank"><i class="fa fa-file-pdf-o"></i> <?=$rs->attach_2?></a>
+          	<?endif;?>
+          	<input type="file" name="attach_2" class="form-control" id="fileField" />
+          </td>
+        </tr>
+        <tr>
+          <th>ไฟล์แนบเอกสาร</th>
+          <td>
+          	<?if($rs->attach_3 != ""):?>
+          		<a href="uploads/chart/<?=$rs->attach_3?>" target="_blank"><i class="fa fa-file-pdf-o"></i> <?=$rs->attach_3?></a>
+          	<?endif;?>
+          	<input type="file" name="attach_3" class="form-control" id="fileField" />
           </td>
         </tr>
         </table>

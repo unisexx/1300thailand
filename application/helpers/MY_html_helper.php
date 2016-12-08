@@ -210,10 +210,14 @@ if(!function_exists('file_icon'))
 {
 	function file_icon($file){
 	    $ext = pathinfo($file, PATHINFO_EXTENSION);
-		if($ext == 'doc'){
+		if($ext == 'doc' || $ext == 'docx'){
 			return '<i class="fa fa-file-word-o" aria-hidden="true"></i>';
+		}elseif($ext == 'pdf'){
+			return '<i class="fa fa-file-pdf-o aria-hidden="true"></i>';
+		}elseif($ext == 'jpg'){
+			return '<i class="fa fa-file-image-o aria-hidden="true"></i>';
 		}else{
-			return '<i class="fa fa-file-pdf-o text-danger" aria-hidden="true"></i>';
+			return 'ไม่มี';
 		}
 	}
 }
