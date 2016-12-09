@@ -13,7 +13,7 @@
 		  </td>
         </tr>
         <tr>
-          <th>ไฟล์แนบเอกสาร<br>ขนาด 930 x 630 px</th>
+          <th>รูปไฮไลท์<br>ขนาด 930 x 630 px</th>
           <td>
           	<?if($rs->img_th != ""):?>
           		<a href="uploads/hilight/<?=$rs->img_th?>" target="_blank"><i class="fa fa-file-pdf-o"></i> <?=$rs->img_th?></a>

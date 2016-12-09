@@ -7,6 +7,7 @@
 	<li><a href='admin/weblinks'><span>หน่วยงานต่างๆที่เกี่ยวข้อง</span></a></li>
 	<li><a href='admin/webboard'><span>เว็บบอร์ด</span></a></li>
 	<li><a href='admin/banners'><span>แบนเนอร์</span></a></li>
+	<li><a href='admin/vdos'><span>วิดีโอ</span></a></li>
 	<!-- <li><a href='admin/user'><span>ผู้ใช้งาน</span></a></li> -->
 	<li><a href='users/logout'><span>ออกจากระบบ</span></a></li>
 </ul>

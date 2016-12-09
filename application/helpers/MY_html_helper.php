@@ -147,65 +147,6 @@ if(!function_exists('get_law_group_name'))
 	}
 }
 
-if(!function_exists('get_law_type_name'))
-{
-	function get_law_type_name($id){
-    $CI =& get_instance();
-    $rs = new Law_type($id);
-    return lang_decode($rs->name);
-	}
-}
-
-if(!function_exists('get_law_maintype_name'))
-{
-	function get_law_maintype_name($id){
-    $CI =& get_instance();
-    $rs = new Law_maintype($id);
-    return lang_decode($rs->typeName);
-	}
-}
-
-if(!function_exists('get_law_submaintype_name'))
-{
-	function get_law_submaintype_name($id){
-    $CI =& get_instance();
-    $rs = new Law_submaintype($id);
-    return lang_decode($rs->typeName);
-	}
-}
-
-if(!function_exists('get_usergroup_array'))
-{
-	function get_usergroup_array(){
-		$CI =& get_instance();
-		$rs = new User_group();
-		$rs->order_by('id','asc')->get();
-		
-		$user_group = array();
-		foreach($rs as $row){
-			$user_group[$row->id] = $row->name;
-		}
-		
-		return $user_group;
-	}
-}
-
-if(!function_exists('get_datalaw_status'))
-{
-	function get_datalaw_status($id){
-    $status = array('1'=>'บังคับใช้','2'=>'ยกเลิก','3'=>'อยู่ระหว่างพิจารณา');
-    return $status[$id];
-	}
-}
-
-if(!function_exists('get_law_version_versiontype_status'))
-{
-	function get_law_version_versiontype_status($id){
-    $status = array("1"=>"ยกเลิก","2"=>"แก้ไข","3"=>"เพิ่มเติม","4"=>"แก้ไข / เพิ่มเติม");   
-    return $status[$id];
-	}
-}
-
 if(!function_exists('file_icon'))
 {
 	function file_icon($file){
@@ -214,100 +155,18 @@ if(!function_exists('file_icon'))
 			return '<i class="fa fa-file-word-o" aria-hidden="true"></i>';
 		}elseif($ext == 'pdf'){
 			return '<i class="fa fa-file-pdf-o aria-hidden="true"></i>';
-		}elseif($ext == 'jpg'){
+		}elseif($ext == 'ppt' || $ext == 'pptx'){
+			return '<i class="fa fa-file-powerpoint-o aria-hidden="true"></i>';
+		}elseif($ext == 'xls' || $ext == 'xlsx'){
+			return '<i class="fa fa-file-excel-o aria-hidden="true"></i>';
+		}elseif($ext == 'jpg' || $ext == 'png' || $ext == 'gif'){
 			return '<i class="fa fa-file-image-o aria-hidden="true"></i>';
 		}else{
-			return 'ไม่มี';
+			return '';
 		}
 	}
 }
 
-if(!function_exists('file_icon_th'))
-{
-	function file_icon_th($file){
-	    $ext = pathinfo($file, PATHINFO_EXTENSION);
-		if($ext == 'doc' or $ext == 'docx'){
-			return '<img src="themes/law/images/word_th.png">';
-		}else{
-			return '<img src="themes/law/images/pdf_th.png">';
-		}
-	}
-}
-
-if(!function_exists('file_icon_en'))
-{
-	function file_icon_en($file){
-	    $ext = pathinfo($file, PATHINFO_EXTENSION);
-		if($ext == 'doc' or $ext == 'docx'){
-			return '<img src="themes/law/images/word_en.png">';
-		}else{
-			return '<img src="themes/law/images/pdf_en.png">';
-		}
-	}
-}
-
-if(!function_exists('get_law_group_text'))
-{
-	function get_law_group_text($id){
-	   $CI =& get_instance();
-	   $law_datalaw = $CI->db->query("select * from law_datalaws where id = ".$id)->row();
-	   
-	   $txt1 = get_law_group_name($law_datalaw->law_group_id);
-	   $txt2 = get_law_type_name($law_datalaw->law_type_id);
-	   $groupLaw = "$txt1 > $txt2 "; 
-	   if($law_datalaw->law_type_id==10){
-	      $txt3 = get_law_type_name($law_datalaw->law_maintype_id);
-	      $txt4 = get_law_submaintype_name($law_datalaw->law_submaintype_id);
-	      $groupLaw .=  "> $txt3 > $txt4";
-	   }elseif($law_datalaw->law_type_id!=11 && $law_datalaw->law_type_id!=10){  
-	      $txt3 = get_law_maintype_name($law_datalaw->law_maintype_id);
-	      $txt4 = get_law_submaintype_name($law_datalaw->law_submaintype_id);
-	      $groupLaw .=  "> $txt3 > $txt4"; 
-	   }        
-    return $groupLaw;
-	}
-}
-
-if(!function_exists('get_law_name'))
-{
-	function get_law_name($id,$link=false){
-		$CI =& get_instance();
-		$law_datalaw = $CI->db->query("select name_th from law_datalaws where id = ".$id)->row();
-		if($link){
-			return '<a href="law/view/'.$id.'" target="_blank">'.str_replace("|"," ",$law_datalaw->name_th).'</a>';	
-		}else{
-			return str_replace("|"," ",$law_datalaw->name_th);	
-		}
-	}
-}
-
-// import code
-if(!function_exists('getIMType'))
-{
-    function getIMType($type,$id1,$id2,$id3=''){               
-        //echo "$type | $id1 | $id2 | $id3 ";
-        $name1 = $this->covertID2Name(LAW_MAINTYPE,$id1);
-        $name2 = $this->covertID2Name(LAW_SUBMAINTYPE,$id2);    
-        $lawName1 = $name1[typeName];
-        $lawName2 = $name2[typeName];                 
-        if($type == 1){                    
-            if(($id1 == 1 || $id1 == 2) && $id2 ){
-                return "im1";
-            }  
-            if($id1 == 3 && $id2){
-                return "im2";
-            }
-        }                                                                           
-        if($type == 2){  
-             if(($id3 == 7 || $id3 == 8 || $id3 == 9  || $id3 == 11 ) && $id2 ){
-                return "im3";
-             }         
-             if(($id2 >= 20) && $id3){
-                return "im4";
-             }      
-        }   
-    }
-}
 
 function url_current(){
 	$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
@@ -324,5 +183,11 @@ function user_logs($module=false,$action=false,$ref=false){
 	$data['ip'] = $_SERVER['REMOTE_ADDR'];
 	$rs->from_array($data);
 	$rs->save();
+}
+
+function getYoutubeIdFromURL($youtubeurl){
+    $pattern = '/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i';
+  	preg_match($pattern, $youtubeurl, $matches);
+  	return isset($matches[1]) ? $matches[1] : false;
 }
 ?>

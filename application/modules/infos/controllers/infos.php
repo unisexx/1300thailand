@@ -9,7 +9,7 @@ class infos extends Public_Controller {
 	function index()
 	{
 		$data['rs'] = new info();
-		$data['rs']->order_by('id desc')->get_page(10);
+		$data['rs']->order_by('id desc')->get_page(8);
 		$this->template->build('index',$data);
 	}
 

@@ -32,7 +32,7 @@ class Hilights extends Admin_Controller {
 				if($rs->id){
 					$rs->delete_file($rs->id,'uploads/hilight','img_th');
 				}
-				$_POST['img_th'] = $rs->upload($_FILES['img_th'],'uploads/hilight/');
+				$_POST['img_th'] = $rs->upload($_FILES['img_th'],'uploads/hilight/',930,630);
 			}
 			
 			$rs->from_array($_POST);
