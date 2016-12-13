@@ -1,5 +1,5 @@
 <?php
-class galleriess extends Admin_Controller {
+class galleries extends Admin_Controller {
 
 	function __construct()
 	{
@@ -8,48 +8,65 @@ class galleriess extends Admin_Controller {
 
 	function index()
 	{
-		$data['rs'] = new galleries();
+		$data['rs'] = new gallery_category();
 		if(@$_GET['search']){
-			$data['rs']->where('name LIKE "%'.$_GET['search'].'%"');
+			$data['rs']->where('title LIKE "%'.$_GET['search'].'%"');
 		}
 
 		$data['rs']->order_by('id','desc')->get_page();
-		$this->template->build('galleriess/index',$data);
+		$this->template->build('galleries/index',$data);
 	}
-
+	
 	function form($id=false){
-		$data['rs'] = new galleries($id);
-		$this->template->build('galleriess/form',$data);
+		$data['rs'] = new gallery_category($id);
+		$this->template->build('galleries/form',$data);
 	}
-
-	function save($id=false){
-		if($_POST){
-
-			$rs = new galleries($id);
+	
+	function save($id=FALSE)
+	{
+		if($_POST)
+		{
+			// category save
+			$category = new gallery_category($id);
+			$category->from_array($_POST);
+			$category->save();
+			$gallery_category_id = $category->db->insert_id();
 			
-			if($_FILES['img_th']['name'])
+			// image save
+			fix_file($_FILES['image']);
+			foreach($_FILES['image'] as $key => $item)
 			{
-				if($rs->id){
-					$rs->delete_file($rs->id,'uploads/galleries','img_th');
+				if($item)
+				{
+					$gallery = new gallery();
+					if($_FILES['image'][$key]['name'])
+					{
+						
+						$gallery->image = $gallery->upload($_FILES['image'][$key],'uploads/gallery');
+						$gallery->gallery_category_id = $gallery_category_id;
+						$gallery->save();
+					}		
 				}
-				$_POST['img_th'] = $rs->upload($_FILES['img_th'],'uploads/galleries/',930,630);
 			}
 			
-			$rs->from_array($_POST);
-			$rs->save();
-			set_notify('success', 'บันทึกข้อมูลเรียบร้อย');
+			set_notify('success', lang('save_data_complete'));
 		}
-		redirect('admin/galleriess');
+		redirect('admin/galleries');
 	}
-
-	function delete($id){
-		if($id){
-			$rs = new galleries($id);
-			$rs->delete();
-			set_notify('success', 'ลบข้อมูลเรียบร้อย');
+	
+	function save_caption(){
+		if($_POST)
+		{
+			foreach($_POST['id'] as $key => $item)
+			{
+				$gallery = new gallery($item);
+				$gallery->caption = $_POST['caption'][$key];
+				$gallery->save();
+			}
+			
+			set_notify('success', lang('save_data_complete'));
 		}
-		redirect('admin/galleriess');
+		redirect($_SERVER['HTTP_REFERER']);
 	}
-
 }
 ?>
