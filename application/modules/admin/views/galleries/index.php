@@ -20,7 +20,7 @@
 <table class="tblist">
 <tr>
   <th>#</th>
-  <th>ชื่อ</th>
+  <th>ชื่ออัลบัม</th>
   <th>จำนวนรูป</th>
   <th>จัดการ</th>
   </tr>

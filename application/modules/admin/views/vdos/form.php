@@ -46,7 +46,7 @@ $(function() {
     
     // YOUTUBE show vid from url
 	var text = $('input[name=youtube_url]').val();
-	if(text != null){
+	if(text != ""){
 	    $.get('admin/vdos/ajax_show_vid',{
 	    	'url' : text
 	    },function(data){
