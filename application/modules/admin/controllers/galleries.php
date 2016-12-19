@@ -68,5 +68,28 @@ class galleries extends Admin_Controller {
 		}
 		redirect($_SERVER['HTTP_REFERER']);
 	}
+	
+	function delete_image($id){
+		if($id){
+			$rs = new gallery($id);
+			$rs->delete();
+			set_notify('success', 'ลบข้อมูลเรียบร้อย');
+		}
+		redirect($_SERVER['HTTP_REFERER']);
+	}
+	
+	function delete($id){
+		if($id){
+			$rs = new gallery_category($id);
+			
+			$b = new gallery();
+			$b->where('gallery_category_id', $id)->get();
+			$b->delete_all();
+
+			$rs->delete();
+			set_notify('success', 'ลบข้อมูลเรียบร้อย');
+		}
+		redirect($_SERVER['HTTP_REFERER']);
+	}
 }
 ?>
