@@ -6,10 +6,10 @@ class Webboard extends Public_Controller {
 		parent::__construct();
 	}
 
-	function index($category_id)
+	function index($category_id=false)
 	{
 		$data['rs'] = new webboard_quiz();
-		$data['rs']->where('webboard_category_id = '.$category_id);
+		if($category_id){ $data['rs']->where('webboard_category_id = '.$category_id);}
 		$data['rs']->where('quiz_status = 1');
 		$data['rs']->order_by('quiz_sticky','desc')->order_by('id','desc')->get_page();
 		$this->template->build('index',$data);

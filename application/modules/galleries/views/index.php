@@ -12,4 +12,4 @@
 	<!-------------------------END Album----------------------------------------------------------->
 
 <div class="clearfix">&nbsp;</div>
-<?=$rs->pagination();?>
+<?=$rs->pagination_front();?>

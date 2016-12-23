@@ -156,3 +156,42 @@ background-image:      -o-linear-gradient(left, #f0a9cd, #F2C3D7);
 */
 
 
+/*PAGINATION*/
+.pages{	text-align: center;}
+.pages ul{display: inline-block; padding: 0;}
+.pages ul li{
+	margin: 1em 1em 0em 0em;
+	padding: 0.3em 0.8em;
+	border-radius: 50px;
+	-webkit-border-radius: 50px;
+	-o-border-radius: 50px;
+	-moz-border-radius: 50px;
+	float:left;
+	display: block;
+	cursor: pointer;
+	background-color:#e2e2dd;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+	font-size: 1.3em;
+}
+.pages ul li a{	color:#BEBEBE;	/*font-size: 1.3em;*/}
+.pages ul li a span
+{
+	background: url(../images/spriteimg.png);
+	width: 15px;
+	height: 30px;
+	display: block;
+}
+.pages li.preview a span {	background-position: -68px -8px;}
+.pages li.next a span{	background-position: -112px -8px;}
+.pages ul li a img{	vertical-align: middle;}
+.pages ul li:hover,.pages ul li.currentpage,li.disabled{	background-color:#485460; color:#BEBEBE;}
+
+/*.pages li:nth-child(1){	margin-right: 3.5em;}
+.pages li:nth-child(7),.pages li:nth-child(7):hover{	background: none;}
+.pages li:nth-child(9),.pages li.next{	margin-left: 3.5em;}*/
+
+
