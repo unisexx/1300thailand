@@ -135,7 +135,7 @@ $(document).ready(function(){
 
 <script type="text/javascript">
 	$(document).ready(function(){
-		$(".datepickerTH").datepicker({ autoclose: true });
+		$(".datepickerTH").datepicker({ autoclose: true,todayHighlight: true });
 	});
 </script>
 

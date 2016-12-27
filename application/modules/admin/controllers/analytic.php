@@ -7,7 +7,7 @@ class analytic extends Admin_Controller
 		parent::__construct();
 		//$this->load->library('ga');
 		$this->load->library('Analytics');
-		error_reporting(0);
+		// error_reporting(0);
 	}
 	
 	function index()
@@ -100,7 +100,7 @@ class analytic extends Admin_Controller
 			$data['topBrowsers'][$key]['ga:visits'] = $v['1'];
 		}
 		
-		$this->template->append_metadata(js_datepicker());
+		// $this->template->append_metadata(js_datepicker());
 		$this->template->build("analytic/index",$data);
 	}
 	

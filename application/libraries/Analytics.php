@@ -17,9 +17,9 @@ require_once APPPATH.'libraries/Analytics/src/Google/autoload.php';
 
 class Analytics {
 	
-	protected $email = '994808673110-brie0i256l7ebdr6oi254sjmn6s49jpn@developer.gserviceaccount.com';
+	protected $email = 'analytics@sixth-bonbon-153702.iam.gserviceaccount.com';
 	
-	protected $ga = 'ga:88636728';
+	protected $ga = 'ga:135514847';
 	
 	//protected $email = '686001543852-vojqggg9v1hchrm48hfabko938d4e8fr@developer.gserviceaccount.com';
 	
@@ -34,7 +34,7 @@ class Analytics {
 		$this->client = new Google_Client();
 		$this->client->setApplicationName("Analytics");
 		$this->analytic = new Google_Service_Analytics($this->client);
-		$cred = new Google_Auth_AssertionCredentials($this->email, array(Google_Service_Analytics::ANALYTICS_READONLY), file_get_contents(__DIR__.'/Analytics/client_secrets-gcd.p12'));
+		$cred = new Google_Auth_AssertionCredentials($this->email, array(Google_Service_Analytics::ANALYTICS_READONLY), file_get_contents(__DIR__.'/Analytics/1300thailand-7dfa25813065.p12'));
 		
 		$this->client->setAssertionCredentials($cred);
 		if($this->client->getAuth()->isAccessTokenExpired()) {
