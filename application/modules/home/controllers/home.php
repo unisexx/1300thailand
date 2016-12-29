@@ -43,5 +43,23 @@ class Home extends Public_Controller {
 		$data['webboard_categories']->order_by('id asc')->get();
 		$this->load->view('inc_webboard',$data);
 	}
+	
+	function inc_analytic(){
+		$this->load->library('Analytics');
+		$ga = new analytics();
+		
+		if($_GET){
+			$now=Date2DB($_GET['date']);
+		}
+		else{
+			$now=date("Y-m-d");
+		}
+		
+		$lastmonth=date('Y-m-d', strtotime('-29 days',mysql_to_unix($now)));
+		
+		$data['ga:visits_today'] = $ga->getResult('visits', $lastmonth, $now);
+		$data['ga:visits_month'] = $ga->getResult('visits', $lastmonth, $now);
+		$data['ga:visits_year'] = $ga->getResult('visits', $lastmonth, $now);
+	}
 }
 ?>
