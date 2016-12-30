@@ -48,18 +48,15 @@ class Home extends Public_Controller {
 		$this->load->library('Analytics');
 		$ga = new analytics();
 		
-		if($_GET){
-			$now=Date2DB($_GET['date']);
-		}
-		else{
-			$now=date("Y-m-d");
-		}
+		$now = date("Y-m-d");
+		$today = date('Y-m-d', strtotime('-1 days',mysql_to_unix($now)));
+		$first_day_of_current_month = (new DateTime('first day of this month'))->format('Y-m-d');
+		$first_day_of_current_year = (new DateTime('first day of January ' . date('Y')))->format('Y-m-d');
 		
-		$lastmonth=date('Y-m-d', strtotime('-29 days',mysql_to_unix($now)));
-		
-		$data['ga:visits_today'] = $ga->getResult('visits', $lastmonth, $now);
-		$data['ga:visits_month'] = $ga->getResult('visits', $lastmonth, $now);
-		$data['ga:visits_year'] = $ga->getResult('visits', $lastmonth, $now);
+		$data['ga_today'] = $ga->getResult('visits', $today, $now);
+		$data['ga_month'] = $ga->getResult('visits', $first_day_of_current_month, $now);
+		$data['ga_year'] = $ga->getResult('visits', $first_day_of_current_year, $now);
+		$this->load->view('inc_analytic',$data);
 	}
 }
 ?>

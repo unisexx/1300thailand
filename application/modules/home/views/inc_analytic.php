@@ -1,0 +1,1 @@
+ผู้เข้าชมวันนี้ <?=number_format($ga_today)?> คน, ผู้เข้าชมเดือนนี้ <?=number_format($ga_month)?> คน, ผู้เข้าชมปีนี้ <?=number_format($ga_year)?> คน
