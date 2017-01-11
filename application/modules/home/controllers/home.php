@@ -58,5 +58,9 @@ class Home extends Public_Controller {
 		$data['ga_year'] = $ga->getResult('visits', $first_day_of_current_year, $now);
 		$this->load->view('inc_analytic',$data);
 	}
+	
+	function info(){
+		echo phpinfo();
+	}
 }
 ?>
