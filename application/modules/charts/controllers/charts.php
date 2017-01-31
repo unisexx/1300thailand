@@ -18,7 +18,7 @@ class charts extends Public_Controller {
 		$data['categories']->order_by('id','asc')->get();
 		
 		$data['rs'] = new chart();
-		$data['rs']->where('chart_category_id = '.$id)->get_page();
+		$data['rs']->where('chart_category_id = '.$id)->order_by('id','desc')->get_page();
 		$this->template->build('view',$data);
 	}
 	

@@ -40,6 +40,6 @@
 		</tbody>
 	</table>
 	
-	<?php echo $rs->pagination()?>
+	<?php echo $rs->pagination_front()?>
 	
 	<div class="clearfix">&nbsp;</div>
