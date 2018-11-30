@@ -199,7 +199,8 @@ class DataMapper implements IteratorAggregate {
 	 * @var array
 	 */
 	static $_dmz_config_defaults = array(
-		'timestamp_format' => 'Y-m-d H:i:s O',
+		// 'timestamp_format' => 'Y-m-d H:i:s O',
+		'timestamp_format' => 'Y-m-d H:i:s',
 		'created_field' => 'created',
 		'updated_field' => 'updated',
 		'extensions_path' => 'datamapper',

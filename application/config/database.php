@@ -74,10 +74,10 @@ $db['fd']['swap_pre'] = '';
 $db['fd']['autoinit'] = TRUE;
 $db['fd']['stricton'] = FALSE;
 
-$db['mso']['hostname'] = 'localhost';
-$db['mso']['username'] = 'lawdb';
-$db['mso']['password'] = 'lawpwd';
-$db['mso']['database'] = 'law2016';
+$db['mso']['hostname'] = 'polluxdb.csloxinfo.com';
+$db['mso']['username'] = '1300thailand60';
+$db['mso']['password'] = 'Xkbr8#99';
+$db['mso']['database'] = '1300thailand60';
 $db['mso']['dbdriver'] = 'mysql';
 $db['mso']['dbprefix'] = '';
 $db['mso']['pconnect'] = TRUE;

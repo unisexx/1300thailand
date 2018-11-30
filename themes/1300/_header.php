@@ -1,7 +1,7 @@
 <div class="section" id="bg-logo">
         <div class="container">
 		    <div class="row">
-				  <div class="col-md-2" style="width:12%;"><img src="themes/1300/images/logo-1300.jpg"></div>
+				  <div class="col-md-2" style="width:12%;"><img src="themes/1300/images/logo2-1300.jpg"></div>
 				  <div class="col-md-10">
 						<img src="themes/1300/images/logo-name.jpg">
 						<div class="col-md-3" style="float:right;">

@@ -12,6 +12,10 @@ class Home extends Public_Controller {
 		$this->template->build('index');
 	}
 
+	function ads() {
+		$this->load->view('ads');
+	}
+
 	public function lang($lang)
 	{
 		$this->load->library('user_agent');
@@ -34,7 +38,7 @@ class Home extends Public_Controller {
 	
 	function inc_info(){
 		$data['infos'] = new info();
-		$data['infos']->order_by('id desc')->get(4);
+		$data['infos']->order_by('id desc')->get(6);
 		$this->load->view('inc_info',$data);
 	}
 	
@@ -50,8 +54,10 @@ class Home extends Public_Controller {
 		
 		$now = date("Y-m-d");
 		$today = date('Y-m-d', strtotime('-1 days',mysql_to_unix($now)));
-		$first_day_of_current_month = (new DateTime('first day of this month'))->format('Y-m-d');
-		$first_day_of_current_year = (new DateTime('first day of January ' . date('Y')))->format('Y-m-d');
+		// $first_day_of_current_month = (new DateTime('first day of this month'))->format('Y-m-d');
+		// $first_day_of_current_year = (new DateTime('first day of January ' . date('Y')))->format('Y-m-d');
+		$first_day_of_current_month = date('Y-m-01');
+		$first_day_of_current_year = date('Y-01-01');
 		
 		$data['ga_today'] = $ga->getResult('visits', $today, $now);
 		$data['ga_month'] = $ga->getResult('visits', $first_day_of_current_month, $now);

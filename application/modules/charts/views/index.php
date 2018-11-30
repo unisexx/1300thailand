@@ -1,4 +1,5 @@
-<div class="title-news">สถิติสายด่วน 1300</div>
+<div class="title-news">สถิติสายด่วน 1300</div><br />
+
 	 <br>
 	<img src="themes/1300/images/icon-chart.png" style="float:left; margin-right:15px; "> 
 	
